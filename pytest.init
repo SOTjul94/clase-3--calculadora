@@ -1,0 +1,4 @@
+[pytest]
+markers =
+    manejoerror: test de manejo de errores de programa
+    criticos: tets de funciones principales del programa
