@@ -11,7 +11,7 @@ def test_suma(a,b,resultado):
     assert suma(a,b) == resultado
     
 def test_division_decimal():
-    assert (10,3) == pytest.approx(3.3333, rel=1e-3)  
+    assert division (10,3) == pytest.approx(3.3333, rel=1e-3)  
     
 def test_division_cero():
     with pytest.raises(ZeroDivisionError):
