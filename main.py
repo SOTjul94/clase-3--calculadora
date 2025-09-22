@@ -1,75 +1,52 @@
-num1 = float(input("Primer número: "))
-num2 = float(input("Segundo número: "))
-oper = input("Operación (+, -, *, /): ")
-if oper == '+':
- result = num1 + num2
-elif oper == '-':
- result = num1 - num2
-elif oper == '*':
- result = num1 * num2
-elif oper == '/':
- result = num1 / num2
-else:
- result = "Inválida"
-print(f"Resultado: {result}")
+def suma(a,b):
+    return a + b 
 
+def resta(a,b):
+    return a - b
 
+def multiplicacion(a,b):
+    return a * b
 
+def division(a,b):
+    return a / b
 
-def suma(a, b):
- return a + b
-def resta(a, b):
- return a - b
-def multiplicacion(a, b):
- return a * b
-def division(a, b):
- return a/b
+def menu():
+    print("Bienvenido a la calculadora de Jose")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicacion")
+    print("4. Division")
+    print("5. Salir del programa")
 
-
-# Menú interactivo
-def   calculadora():
- print("  CALCULADORA PYTHON de Leonardo")
-print("1. Sumar")
-print("2.resta")
-print("3.Multiplicacion")
-print("4.division") 
-print("5.salir del programa")
 def main():
- while True:
-  calculadora()
+    while True:
+        menu()
+        try:
+            opcion = int(input("Ingrese una opcion: "))
 
-try:
-  opcion = int(input("Ingresa un número entero: "))
- 
-  num1 =int(input("ingrse el primer numero:"))
-  num2 =int(input("ingrse el segundo numero:"))
+            num1 = int(input("Ingrese el primer numero: "))
+            num2 = int(input("Ingrese el segundo numero: "))   
+            
+            match opcion:
+                case 1:
+                    resultado = suma(num1,num2)
+                case 2:
+                    resultado = resta(num1,num2)
+                case 3:
+                    resultado = multiplicacion(num1,num2)
+                case 4:
+                    resultado = division(num1,num2)
+                case 5:
+                    print("Saliendo del programa...")
+                    break
+                case _:
+                    print("La operacion ingresada no existe.")
+        except ValueError:
+            print("El valor ingresado no es valido")
+        except ZeroDivisionError:
+            print("No se puede dividir por 0")
+        else:
+            print(f"El resultado es: {resultado}")
 
-  match opcion:
-    case 1:
-      resultado = suma(num1,num2)
-
-    case 2:
-     resultado = resta(num1,num2)
-    case 3:
-     resultado = multiplicacion(num1,num2)
-    case 4:
-     resultado = division(num1,num2)
-    case 5:
-         print("saliendo del programa")
-    break
-    
-    case _:
-        print("La operacion ingresada no es existe ")
-
-except ValueError:
-  print("Error el valor no es valido.")
- 
-except ZeroDivisionError:
-   print("no se puede dividir por cero")
-
-else:
-  print("el resulatdo es:{resultado}")
-
-main() 
-
+main()
  
